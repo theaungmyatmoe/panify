@@ -8,7 +8,7 @@ const  checker = cc => {
     }
     sum += digit;
   }
-  console.log(sum);
+  
   return sum % 10 === 0;
 }
 let cc = process.argv[2].split('').map(Number);
