@@ -13,3 +13,9 @@ Validation - is the checking process of true - ✅ (or) false - ❌ of the objec
 
 - [ ] Create Website that can generate the credits
 - [x] Validation of credit cards implemented
+
+# Usage for now
+
+```sh
+node validator.js <Credit_Card_Number>
+```
