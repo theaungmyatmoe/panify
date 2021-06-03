@@ -1,0 +1,21 @@
+{
+  "name": "cc",
+  "version": "1.0.0",
+  "description": "Generator and Validator of Credit cards.",
+  "type": "module",
+  "main": "generator.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amm834/cc.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amm834/cc/issues"
+  },
+  "homepage": "https://github.com/amm834/cc#readme"
+}
