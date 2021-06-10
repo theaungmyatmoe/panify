@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Generator and Validator of Credit cards.",
   "type": "module",
-  "main": "generator.js",
+  "main": "src/generator.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/amm834/cc/issues"
   },
-  "homepage": "https://github.com/amm834/cc#readme"
+  "homepage": "https://github.com/amm834/cc#readme",
+  "dependencies": {
+    "@amm834/luhn": "^1.3.1"
+  }
 }
