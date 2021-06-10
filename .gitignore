@@ -1,3 +1,4 @@
 visa.js
 node_modules/*
+lib/
 !.gitignore

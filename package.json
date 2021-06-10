@@ -1,24 +1,40 @@
 {
-  "name": "cc",
+  "name": "panify",
   "version": "1.0.0",
-  "description": "Generator and Validator of Credit cards.",
-  "type": "module",
-  "main": "src/generator.js",
+  "description": "Validated credit card numbers generator and valiadtor.",
+  "main": "./lib/tsc/generator.js",
+  "types":"./lib/tsc/generator.d.ts",
+  "bin": {
+    "panify":"./lib/tsc/cli.js"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepare": "tsc -p .",
+    "build": "tsc -p .",
+    "watch": "tsc -p . --watch",
+    "test": "echo \"Error: no test specified\""
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/amm834/cc.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "mod10",
+    "luhn",
+    "pan",
+    "panify",
+    "crefit card"
+  ],
+  "author": "Aung Myat Moe",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/amm834/cc/issues"
   },
   "homepage": "https://github.com/amm834/cc#readme",
   "dependencies": {
-    "@amm834/luhn": "^1.3.1"
+    "@amm834/luhn": "^1.3.1",
+    "@types/node": "^15.12.2"
+  },
+  "engines": {
+    "node": ">=8"
   }
 }
