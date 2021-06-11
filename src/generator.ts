@@ -1,15 +1,13 @@
-import {
-  Luhn
-} from '@amm834/luhn';
+ import { Luhn} from '@amm834/luhn';
 import {
   randRng,
   randDate
 } from './randomRng';
 
-
-class Generator {
+export class Generator {
   constructor(
-    public BIN: number, public LIMIT: number = 10) {
+    public BIN: number, 
+    public LIMIT: number = 10) {
     this.BIN = BIN;
     this.LIMIT = LIMIT;
   }
@@ -37,4 +35,3 @@ class Generator {
   }
 
 }
-export Generator;

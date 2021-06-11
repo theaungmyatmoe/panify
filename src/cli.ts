@@ -3,11 +3,15 @@
 import {
   Luhn
 } from '@amm834/luhn';
+import {
+  Generator
+} from './generator';
 
-let info: string | boolean;
+let info: string | boolean | unknown;
 const option: string = process.argv[2];
-const pan: string = process.argv[3];
-const __VERSION_NUMBER: string = '2.3.0';
+const pan: string = process.argv[3]// pan can be bin
+
+const __VERSION_NUMBER: string = '1.2.0';
 
 switch (option) {
   case '-h' || '--help':
@@ -15,11 +19,14 @@ switch (option) {
     break;
   case '-v' || '--version':
     info = `
-    Luhn CLI Version - v${__VERSION_NUMBER} 🐈✨
+    Panify CLI Version - v${__VERSION_NUMBER} 🐈✨
     `;
     break;
   case '--validate':
     info = validate(parseInt(pan));
+    break;
+  case '-g' || '--generate':
+    info = generatePans(parseInt(pan))
     break;
   default:
     info = showHelp();
@@ -29,13 +36,14 @@ switch (option) {
 
   function showHelp() {
     return     `
-    Luhn Validator CLI 🐈✨
-    This CLI application was developed by Aung Myat Moe.
+    Panify Validator CLI 🐈✨
+    Verified credit card generator and validator.
 
-    Usage : luhn <options> <card_numbers>
+    Usage : panify <options> <card_numbers|bin_numbers>
 
     Options
 
+    -g|--generate Generate Card Numbers
     --validate    Validate the card numbers
     -h|--help     Show this usage
     -v|--version  Show version number
@@ -53,4 +61,15 @@ switch (option) {
       ❌ Your credit card numbers ${pan} is invalid 🥺
       `;
     }
+  }
+
+  function generatePans(bin: number) {
+    const validate = Array.from(String(bin), Number);
+    if (validate.length < 6) {
+      return `
+      BIN numbers must have at least 6 digits.
+      `;
+    }
+    const generator = new Generator(bin);
+    return generator.generate();
   }

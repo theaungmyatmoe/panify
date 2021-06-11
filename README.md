@@ -1,21 +1,50 @@
-# Credit Card Generator and Validator
+# Painfy
 
-Generator and Validator of Credit cards.
+Validated credit card generator and validator.
 
-# Generating Credit Cards
-Credit cards - 💳 that can use for free trials and it's valid but not allow to store money in it and it's not owned by anyone.
+# Installations
 
-# Validation of Credit Cards 
+```bash
+npm install panify
 
-Validation - is the checking process of true - ✅ (or) false - ❌ of the object that are really or not.
+#or
 
-# Todos
+yarn add panify
+```
 
-- [ ] Create Website that can generate the credits
-- [x] Validation of credit cards implemented
+# Usage
 
-# Usage for now
+```js
+import {Generator} from 'panify';
 
-```sh
-node validator.js <Credit_Card_Number>
+const BIN = 123456; // First six digits of crefit card (ex:visa)
+const panify = new Generator(BIN);
+const cardArray = panify.generate();
+console.log(cardArray); 
+/** It will return like this.
+   [
+      { card_number: 1234568048668257,
+      month: 8, 
+      year: 2024
+      },
+      ...
+    ]
+*/
+```
+
+# Get More Cards
+
+You can also generate many cards whatever you like.
+
+```js
+const BIN = 123456; // First six digits of crefit card (ex:visa)
+const panify = new Generator(BIN,100);
+console.log(panify.generate()); // => 100 array of objects will return
+```
+
+# CLI Usage
+
+```bash
+# -g means generate depends on bin that you support
+npx panify -g 123456
 ```
