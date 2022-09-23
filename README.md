@@ -1,3 +1,5 @@
+<img alt="npm" src="https://img.shields.io/npm/dm/panify">
+
 # Painfy
 
 Validated credit card generator and validator.
