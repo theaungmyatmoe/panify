@@ -1,37 +1,43 @@
- import { Luhn} from '@amm834/luhn';
-import {
-  randRng,
-  randDate
-} from './randomRng';
+import {generateRandomData, generateRandomRange} from './utils/random';
+import {validate} from "./utils/validate";
 
-export class Generator {
-  constructor(
-    public BIN: number, 
-    public LIMIT: number = 10) {
-    this.BIN = BIN;
-    this.LIMIT = LIMIT;
-  }
 
-  generate() {
-    let panAry = [];
-    while (true) {
-      const generatedPan = this.BIN + '' + randRng(0, 9999999999);
+type Card = {
+    cardNumber: number;
+    month: number;
+    year: number;
+}
 
-      if (Luhn.validate(parseInt(generatedPan))) {
-        const panObject = {
-          card_number: parseInt(generatedPan),
-          month: randDate().month,
-          year: randDate().year
-        };
 
-        panAry.push(panObject);
-      }
+/*
+* @param {number} bin - The first 6 digits of the card number
+* @param {number} total - The total number of card numbers that you want to generate
+* @returns {void}
+* */
+export function createGenerator(bin: number, total = 10) {
+    const generate = async (): Promise<Card[]> => {
+        const cards: Card[] = [];
 
-      if (panAry.length === this.LIMIT) {
-        return panAry;
-      }
+        for (; ;) {
+            const generatedRandomNumber = `${bin}${generateRandomRange(0, 1000)}`
 
+            if (validate(generatedRandomNumber)) {
+                const {month, year} = generateRandomData();
+
+                const validateCard: Card = {
+                    cardNumber: +generatedRandomNumber,
+                    month,
+                    year,
+                };
+
+                cards.push(validateCard);
+            }
+            if (cards.length === total) break;
+        }
+        return cards;
+    };
+
+    return {
+        generate,
     }
-  }
-
 }

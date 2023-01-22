@@ -1,27 +1,25 @@
 {
   "name": "panify",
-  "version": "1.2.0",
-  "description": "Validated credit card numbers generator and valiadtor.",
-  "main": "./lib/tsc/generator.js",
-  "brower":"./lib/esbuild/panify.js",
-  "types": "./lib/tsc/generator.d.ts",
-  
+  "version": "2.0.0",
+  "description": "Validated credit card numbers generator and validator.",
+  "main": "dist/index.js",
+  "brower": "dist/index.mjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
   "bin": {
     "panify": "./lib/tsc/cli.js"
   },
+  "directories": [
+    "examples"
+  ],
   "scripts": {
-    "prepare": "tsc -p . && npm run build-browser",
-    "build": "tsc -p .",
-    "watch": "tsc -p . --watch",
-    "build-browser": "esbuild src/browser.ts --bundle --minify --sourcemap=external --outfile=lib/esbuild/panify.js",
-    "build-browser:dev": "esbuild src/browser.ts --bundle --outfile=lib/esbuild/panify.js",
-
-    "docs":"typedoc --entryPoints src/generator.ts",
-    "test": "jest"
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "lint": "tsc --noEmit",
+    "test": "vitest"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/amm834/cc.git"
+    "url": "git+https://github.com/amm834/panify.git"
   },
   "keywords": [
     "mod10",
@@ -34,20 +32,15 @@
   "author": "Aung Myat Moe",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/amm834/cc/issues"
+    "url": "https://github.com/amm834/panify/issues"
   },
-  "homepage": "https://github.com/amm834/cc#readme",
+  "homepage": "https://github.com/amm834/panify#readme",
   "devDependencies": {
-    "@types/jest": "^26.0.23",
-    "@types/node": "^15.12.1",
-    "@typescript-eslint/eslint-plugin": "^4.26.1",
-    "@typescript-eslint/parser": "^4.26.1",
-    "esbuild": "^0.12.8",
-    "eslint": "^7.28.0",
-    "jest": "^27.0.4",
-    "ts-jest": "^27.0.3",
-    "typedoc": "^0.20.36",
-    "typescript": "^4.3.2"
+    "@types/node": "^18.11.18",
+    "add": "^2.0.6",
+    "tsup": "^6.5.0",
+    "typescript": "^4.9.4",
+    "vitest": "^0.27.3"
   },
   "engines": {
     "node": ">=8"
