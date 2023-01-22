@@ -1,17 +1,18 @@
 {
   "compilerOptions": {
-    "target": "es2016",
-    "module": "commonjs",
+    "target": "ES2022",
+    "module": "ES2022",
     "lib": [
       "es2016",
       "dom"
     ],
+    "noEmit": true,
     "sourceMap": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "noUncheckedIndexedAccess": true,
     "forceConsistentCasingInFileNames": true,
-    "noEmit": true
+    "moduleResolution": "Node"
   },
   "exclude": [
     "node_modules"

@@ -10,7 +10,7 @@ type Card = {
 
 
 /*
-* @param {number} bin - The first 6 digits of the card number
+* @param {number} cli - The first 6 digits of the card number
 * @param {number} total - The total number of card numbers that you want to generate
 * @returns {void}
 * */
