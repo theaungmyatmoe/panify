@@ -1,29 +1,30 @@
-import {
-  Generator
-} from '../generator';
-import {
-  Luhn
-} from '@amm834/luhn';
+import {it, expect} from 'vitest'
+import {createGenerator} from "../generator";
+import {validate} from "../utils/validate";
 
-it('Test the card number should be success.', () => {
-  const panify = new Generator(489504);
-  const result = panify.generate();
-  expect(result).toEqual(
-    expect.arrayContaining([
-      expect.objectContaining({
-        cardNumber: expect.any(Number),
-        month: expect.any(Number),
-        year: expect.any(Number)
-      })
-    ])
-  )});
+it('should generate cards with excepted card shape', async () => {
+    const panify = createGenerator(489504);
+    const result = await panify.generate();
 
-it('Test the card number should be success.', () => {
-  const result = Luhn.validate(4895048712071025);
-  expect(result).toBe(true)
+    expect(result).toEqual(
+        expect.arrayContaining([
+            expect.objectContaining({
+                cardNumber: expect.any(Number),
+                month: expect.any(Number),
+                year: expect.any(Number)
+            })
+        ])
+    )
 });
 
-it('Test the card number should be fail', () => {
-  const result = Luhn.validate(4895048712071026);
-  expect(result).toBe(false)
+it('should be valid card number', () => {
+    const result = validate(4895048712071025);
+
+    expect(result).toBe(true)
+});
+
+it('should be invalid card number', () => {
+    const result = validate(4895048712071026);
+
+    expect(result).toBe(false)
 });
