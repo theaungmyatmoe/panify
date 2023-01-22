@@ -1,6 +1,6 @@
 {
   "name": "panify",
-  "version": "2.0.0",
+  "version": "2.0.2",
   "description": "Validated credit card numbers generator and validator.",
   "main": "dist/index.js",
   "browser": "dist/index.mjs",
