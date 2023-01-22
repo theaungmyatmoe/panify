@@ -18,13 +18,13 @@ it('should generate cards with excepted card shape', async () => {
 });
 
 it('should be valid card number', () => {
-    const result = validate(4895048712071025);
+    const result = validate("4895048712071025");
 
     expect(result).toBe(true)
 });
 
 it('should be invalid card number', () => {
-    const result = validate(4895048712071026);
+    const result = validate("4895048712071026");
 
     expect(result).toBe(false)
 });
