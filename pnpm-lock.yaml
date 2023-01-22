@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@amm834/luhn': ^2.1.1
+  '@amm834/luhn': ^2.2.0
   '@types/node': ^18.11.18
   '@types/prompts': ^2.4.2
   add: ^2.0.6
@@ -11,7 +11,7 @@ specifiers:
   vitest: ^0.27.3
 
 dependencies:
-  '@amm834/luhn': 2.1.1
+  '@amm834/luhn': 2.2.0
   prompts: 2.4.2
 
 devDependencies:
@@ -24,8 +24,8 @@ devDependencies:
 
 packages:
 
-  /@amm834/luhn/2.1.1:
-    resolution: {integrity: sha512-tfcqZDwm6FKmqPLg78J19WWDFhJ+11SP+lec9PrvasZicVA9X/zOwM7EfY2mrJzcpBN207o1rVLfOfexWZvBww==}
+  /@amm834/luhn/2.2.0:
+    resolution: {integrity: sha512-niXsRNGUq7e1OVxSZxQK9zi5h+r/0WnfWBBHi6daDc/zG83mFi7kFd04H2jmV9sMo+yVoDKBLyujp123nUhUIg==}
     engines: {node: '>=16.11.0'}
     hasBin: true
     dependencies:
