@@ -1,6 +1,6 @@
 import {it, expect} from 'vitest'
 import {createGenerator} from "../generator";
-import {validate} from "../utils/validate";
+import {validate} from "@amm834/luhn";
 
 it('should generate cards with excepted card shape', async () => {
     const panify = createGenerator(489504);
