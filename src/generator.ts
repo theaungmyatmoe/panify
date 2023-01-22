@@ -1,6 +1,5 @@
 import {generateRandomData, generateRandomRange} from './utils/random';
-import {validate} from "./utils/validate";
-
+import {validate} from "@amm834/luhn";
 
 type Card = {
     cardNumber: number;

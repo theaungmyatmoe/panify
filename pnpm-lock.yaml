@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@amm834/luhn': ^1.3.1
+  '@amm834/luhn': ^2.1.1
   '@types/node': ^18.11.18
   '@types/prompts': ^2.4.2
   add: ^2.0.6
@@ -11,7 +11,7 @@ specifiers:
   vitest: ^0.27.3
 
 dependencies:
-  '@amm834/luhn': 1.3.2
+  '@amm834/luhn': 2.1.1
   prompts: 2.4.2
 
 devDependencies:
@@ -24,10 +24,13 @@ devDependencies:
 
 packages:
 
-  /@amm834/luhn/1.3.2:
-    resolution: {integrity: sha512-ZM0ck7P8PyYaZ/QxCaLsb8hfn0hSqLl1U5YezGVassc9GumYoH71bCb2aETGlD9OYsAakYLnQ0K99qchiGV69Q==}
-    engines: {node: '>=8'}
+  /@amm834/luhn/2.1.1:
+    resolution: {integrity: sha512-tfcqZDwm6FKmqPLg78J19WWDFhJ+11SP+lec9PrvasZicVA9X/zOwM7EfY2mrJzcpBN207o1rVLfOfexWZvBww==}
+    engines: {node: '>=16.11.0'}
     hasBin: true
+    dependencies:
+      chalk: 5.2.0
+      commander: 9.5.0
     dev: false
 
   /@esbuild/android-arm/0.15.18:
@@ -379,6 +382,11 @@ packages:
       type-detect: 4.0.8
     dev: true
 
+  /chalk/5.2.0:
+    resolution: {integrity: sha512-ree3Gqw/nazQAPuJJEy+avdl7QfZMcUvmHIKgEZkGL+xOBzRvup5Hxo6LHuMceSxOabuJLJm5Yp/92R9eMmMvA==}
+    engines: {node: ^12.17.0 || ^14.13 || >=16.0.0}
+    dev: false
+
   /check-error/1.0.2:
     resolution: {integrity: sha512-BrgHpW9NURQgzoNyjfq0Wu6VFO6D7IZEmJNdtgNqpzGG8RuNFHt2jQxWlAs4HMe119chBnv+34syEZtc6IhLtA==}
     dev: true
@@ -402,6 +410,11 @@ packages:
     resolution: {integrity: sha512-NOKm8xhkzAjzFx8B2v5OAHT+u5pRQc2UCa2Vq9jYL/31o2wi9mxBA7LIFs3sV5VSC49z6pEhfbMULvShKj26WA==}
     engines: {node: '>= 6'}
     dev: true
+
+  /commander/9.5.0:
+    resolution: {integrity: sha512-KRs7WVDKg86PWiuAqhDrAQnTXZKraVcCc6vFdL14qrZ/DcWwuRo7VoiYXalXO7S5GKpqYiVEwCbgFDfxNHKJBQ==}
+    engines: {node: ^12.20.0 || >=14}
+    dev: false
 
   /concat-map/0.0.1:
     resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
