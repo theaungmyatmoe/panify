@@ -1,52 +1,26 @@
-<img alt="npm" src="https://img.shields.io/npm/dm/panify">
+# Panify
 
-# Painfy
+![npm](https://img.shields.io/npm/v/panify) ![npm](https://img.shields.io/npm/dm/panify) ![npm](https://img.shields.io/npm/dy/panify)
 
-Validated credit card generator and validator.
+Credit card number validator and generator.
 
 # Installations
 
 ```bash
-npm install panify
-
-#or
-
-yarn add panify
+pnpm install panify #pnpm
 ```
 
 # Usage
 
-```js
-import {Generator} from 'panify';
+First, provide the intial 6 digits of the PAN number to the `createGenerator`
+And then you can generate a random PAN number by calling the `generate` function.
 
-const BIN = 123456; // First six digits of crefit card (ex:visa)
-const panify = new Generator(BIN);
-const cardArray = panify.generate();
-console.log(cardArray); 
-/** It will return like this.
-   [
-      { card_number: 1234568048668257,
-      month: 8, 
-      year: 2024
-      },
-      ...
-    ]
-*/
+```javascript
+import {createGenerator} from "panify";
+
+const generator = createGenerator(489504)
+const cards = await generator.generate()
+
+console.log(cards)
 ```
 
-# Get More Cards
-
-You can also generate many cards whatever you like.
-
-```js
-const BIN = 123456; // First six digits of crefit card (ex:visa)
-const panify = new Generator(BIN,100);
-console.log(panify.generate()); // => 100 array of objects will return
-```
-
-# CLI Usage
-
-```bash
-# -g means generate depends on bin that you support
-npx panify -g 123456
-```
